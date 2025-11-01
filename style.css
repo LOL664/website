@@ -1,0 +1,87 @@
+body {
+        font-family: 'Press Start 2P', cursive;
+        background: #050505;
+        color: #00ffcc;
+        text-align: center;
+        padding: 40px;
+        overflow: hidden;
+      }
+
+      h1, h2 {
+        color: #00ffcc;
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #008877;
+      }
+
+      p {
+        font-family: Arial, sans-serif;
+        color: #ccc;
+        line-height: 1.6;
+        width: 80%;
+        margin: 15px auto;
+        text-shadow: 0 0 3px #009988;
+      }
+
+      button {
+        background: #00ffcc;
+        color: #000;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: 0 0 10px #00ffcc;
+      }
+
+      button:hover {
+        background: #00cc99;
+        transform: scale(1.05);
+      }
+
+      /* Glitch Animation */
+      @keyframes glitch {
+        0% { clip-path: inset(80% 0 0 0); transform: translate(-2px, 2px); }
+        20% { clip-path: inset(10% 0 85% 0); transform: translate(2px, -2px); }
+        40% { clip-path: inset(50% 0 30% 0); transform: translate(-1px, 1px); }
+        60% { clip-path: inset(40% 0 43% 0); transform: translate(1px, 1px); }
+        80% { clip-path: inset(80% 0 5% 0); transform: translate(-1px, -1px); }
+        100% { clip-path: inset(0 0 0 0); transform: none; }
+      }
+
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(10,10,10,1) 100%);
+        color: #00ffcc;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 9999;
+        animation: fadeIn 0.3s ease;
+      }
+
+      #popup h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        animation: glitch 1s infinite;
+        text-shadow: 0 0 8px #00ffcc, 0 0 20px #00ffff;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /* Screen flicker effect */
+      .flicker {
+        animation: flickerAnim 0.3s steps(2, start) infinite;
+      }
+
+      @keyframes flickerAnim {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0.6; }
+      }
